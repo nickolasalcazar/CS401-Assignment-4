@@ -1,15 +1,19 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
 
+/**
+ * Account owns ShoppingCart and Orders.
+ * 
+ */
 public class Account {
 	String id;
 	String billing_address;
-	Boolean is_closed = false;
+	boolean is_closed = false;
 	LocalDate open;
 	LocalDate closed; // Assigned when Account is closed
 
 	// ShoppingCart shoppingCart; // 1-to-1
-	// ArrayList<Order> orders = new ArrayList<Order>(); // 1-to-*
+	ArrayList<Order> orders = new ArrayList<Order>(); // 1-to-*
 
 	public Account(String id, String address) {
 		this.id = id;

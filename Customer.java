@@ -4,7 +4,7 @@ public class Customer {
 	private String phone;
 	private String email;
 
-	// private WebUser webUser;
+	// private WebUser webUser; // Optional
 	private Account account; // Created in constructor
 
 	public Customer(String id, String address, String phone, String email) {
@@ -22,4 +22,6 @@ public class Customer {
 	public String getPhone() { return phone; }
 
 	public String getEmail() { return email; }
+
+
 }
