@@ -2,21 +2,20 @@ enum UserState { NEW, ACTIVE, BLOCKED, BANNED }
 
 /**
  * WebUser represents the online web account of a Customer. A Customer may or
- * may not have an assoicated WebUser. WebUser is created created and managed
- * by Customer.
+ * may not be assoicated with a WebUser. WebUser is created created and managed
+ * by Customer. Only one WebUser may be assigned to a Customer.
  */
 public class WebUser {
 	private String login_id; // email
 	private String password;
-	private UserState userState;
+	private UserState userState = UserState.NEW;
 
 	/**
-	 * Class constructor for WebUser.
+	 * Class constructor for WebUser. UserState is set to NEW by default.
 	 */
-	public WebUser(String login_id, String password, UserState userState) {
+	public WebUser(String login_id, String password) {
 		this.login_id = login_id;
 		this.password = password;
-		this.userState = userState;
 	}
 
 	public String getLoginId() { return login_id; }

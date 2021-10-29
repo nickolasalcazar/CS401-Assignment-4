@@ -4,8 +4,8 @@ public class Customer {
 	private String phone;
 	private String email;
 
-	// private WebUser webUser; // Optional
-	private Account account; // Created in constructor
+	private WebUser webUser = null;
+	private Account account;
 
 	public Customer(String id, String address, String phone, String email) {
 		this.id = id;
@@ -24,6 +24,16 @@ public class Customer {
 	public String getEmail() { return email; }
 
 	public Account getAccount() { return account; }
+
+	/**
+	 * Creates a WebUser if one has not already been created and assigns it to
+	 * this Customer.
+	 * 
+	 * @param password	Password of WebUser.
+	 */
+	public void makeWebUser(String password) {
+		if (webUser != null) webUser = new WebUser(email, password);
+	}
 
 	/**
 	 * Returns a String listing the contents of Product in the format:
