@@ -1,4 +1,4 @@
-enum UserState { New, Active, Blocked, Banned }
+enum UserState { NEW, ACTIVE, BLOCKED, BANNED }
 
 /**
  * WebUser represents the online web account of a Customer. A Customer may or
@@ -6,7 +6,7 @@ enum UserState { New, Active, Blocked, Banned }
  * by Customer.
  */
 public class WebUser {
-	private String login_id;
+	private String login_id; // email
 	private String password;
 	private UserState userState;
 
