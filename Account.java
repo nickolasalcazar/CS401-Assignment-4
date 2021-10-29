@@ -3,7 +3,8 @@ import java.time.LocalDate;
 
 /**
  * Account manages ShoppingCart and Orders, and is associated with a single
- * Customer.
+ * Customer. Can add LineItems to ShoppingCart and create Orders based off of
+ * the contents of ShoppingCart.
  */
 public class Account {
 	String id;
@@ -33,16 +34,25 @@ public class Account {
 		System.out.println("Account opened on " + open.toString());
 	}
 
-
-
 	/**
-	 * Makes a new Order and stores it in the ArrayList field orders.
-	 * Creates the Order using LineItems from ShoppingCart as an argument.
+	 * Makes a new Order and stores it in the ArrayList orders. Creates the
+	 * Order using LineItems from ShoppingCart. After the Order has been
+	 * from ShoppingCart, ShoppingCart is emptied.
 	 * 
 	 * @param id		ID of the Order to be created.
 	 */
 	public void makeOrder(String orderId) {
 		Order order = new Order(orderId, billing_address, shoppingCart.getLineItems());
 		orders.add(order);
+		shoppingCart.clearLineItems();
 	}
+
+	/**
+	 * Adds a Product to ShoppingCart with an associated price and quantity.
+	 */
+	public void addToShoppingCart(Product product, float price, int qty) {
+		shoppingCart.addLineItem(product, price, qty);
+	}
+
+	//public void removeFromShoppingCart(Product product, int qty) {}
 }
