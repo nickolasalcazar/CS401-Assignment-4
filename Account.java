@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 
 /**
- * Account owns ShoppingCart and Orders.
- * 
+ * Account manages ShoppingCart and Orders, and is associated with a single
+ * Customer.
  */
 public class Account {
 	String id;
@@ -32,6 +32,8 @@ public class Account {
 
 		System.out.println("Account opened on " + open.toString());
 	}
+
+
 
 	/**
 	 * Makes a new Order and stores it in the ArrayList field orders.
