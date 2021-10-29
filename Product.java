@@ -38,4 +38,10 @@ public class Product {
 	public boolean equals(Product product) {
 		return this.id == product.getId();
 	}
+
+	/**
+	 * Return a String listing the contents of Product in the format:
+	 * "name, id, supplier".
+	 */
+	public String toString() { return name + ", " + id + ", " + supplier; }
 }
