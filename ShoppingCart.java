@@ -25,6 +25,11 @@ public class ShoppingCart {
 	public ArrayList<LineItem> getLineItems() { return lineItems; }
 
 	/**
+	 * Empties ShoppingCart of its LineItems.
+	 */
+	public void clearLineItems() { lineItems.clear(); }
+
+	/**
 	 * Remove a quantity of a Product from ShoppingCart. Removes a Product
 	 * object from the ArrayList lineItems.
 	 * 
