@@ -1,3 +1,7 @@
+/**
+ * Product represents a kind of product. Product represents the id, name, and
+ * supplier as Strings. Product does not record price or quantity purchased.
+ */
 public class Product {
 	private String id;
 	private String name;
