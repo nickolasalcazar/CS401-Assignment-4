@@ -24,5 +24,12 @@ public class Customer {
 	public String getEmail() { return email; }
 
 	public Account getAccount() { return account; }
-	
+
+	/**
+	 * Returns a String listing the contents of Product in the format:
+	 * "id, addres, phone, email".
+	 */
+	public String toString() {
+		return id + ", " + address + ", " + phone + ", " + email;
+	}
 }

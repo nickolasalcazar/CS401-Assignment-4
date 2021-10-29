@@ -40,7 +40,7 @@ public class Product {
 	}
 
 	/**
-	 * Return a String listing the contents of Product in the format:
+	 * Returns a String listing the contents of Product in the format:
 	 * "name, id, supplier".
 	 */
 	public String toString() { return name + ", " + id + ", " + supplier; }
