@@ -9,12 +9,17 @@ public class LineItem {
 
 	private Product product;
 
-	public Product(float price, int qty) {
+	public LineItem(Product product, float price, int qty) {
+		this.product = product;
 		this.price = price;
 		this.qty = qty;
 	}
 
 	public float getPrice() { return price; }
+
+	public int getQty() { return qty; }
+
+	public void setQty(int qty) { this.qty = qty; }
 
 	public Product getProduct() { return product; }
 }
