@@ -8,7 +8,7 @@ public class Order {
 	private LocalDate ordered;
 	private LocalDate shipped;
 	private String ship_to;
-	private OrderStatus status;
+	private OrderStatus status = OrderStatus.NEW;
 	private float total; // equal to the sum of the price of all LineItems
 
 	private float ammount_paid;
@@ -18,6 +18,9 @@ public class Order {
 	ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
 
 	/**
+	 * Constructor for Order. OrderStatus is set to NEW by default upon
+	 * creation.
+	 * 
 	 * @param id		Order ID.
 	 * @param address	Shipping address.
 	 * @param lineItems	ArrayList containing LineItems, presumably
@@ -35,8 +38,5 @@ public class Order {
 
 	public ArrayList<LineItem> getLineItems() { return lineItems; }
 
-
-	public void setStatus(OrderStatus newStatus) {
-		status = newStatus;
-	}
+	public void setStatus(OrderStatus newStatus) { status = newStatus; }
 }
