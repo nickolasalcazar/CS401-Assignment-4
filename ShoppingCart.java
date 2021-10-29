@@ -4,7 +4,7 @@ import java.time.LocalDate;
 public class ShoppingCart {
 	private LocalDate created;
 
-	ArrayList<LineItem> lineItems;
+	private ArrayList<LineItem> lineItems;
 
 	/**
 	 * Constructor of ShoppingCart. Instantiates an empty ArrayList
