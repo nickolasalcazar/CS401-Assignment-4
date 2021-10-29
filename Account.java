@@ -3,8 +3,9 @@ import java.time.LocalDate;
 
 /**
  * Account manages ShoppingCart and Orders, and is associated with a single
- * Customer. Can add LineItems to ShoppingCart and create Orders based off of
- * the contents of ShoppingCart.
+ * Customer and WebUser. Can add LineItems to ShoppingCart and create Orders
+ * based off of the contents of ShoppingCart. Can also access and manage
+ * an associated WebUser account.
  */
 public class Account {
 	String id;
