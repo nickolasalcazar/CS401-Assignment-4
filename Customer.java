@@ -37,7 +37,7 @@ public class Customer {
 
 	/**
 	 * Returns a String listing the contents of Product in the format:
-	 * "id, addres, phone, email".
+	 * "id, address, phone, email".
 	 */
 	public String toString() {
 		return id + ", " + address + ", " + phone + ", " + email;

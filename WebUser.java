@@ -23,4 +23,12 @@ public class WebUser {
 	public UserState getUserState() { return userState; }
 
 	public void setUserState(UserState userState) { this.userState = userState; }
+
+	/**
+	 * Returns a String listing the contents of WebUser in the format:
+	 * "login_id, password, userState".
+	 */
+	public String toString() {
+		return login_id + ", " + password + ", " + userState;
+	}
 }
