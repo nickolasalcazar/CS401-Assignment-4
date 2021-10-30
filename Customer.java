@@ -32,8 +32,14 @@ public class Customer {
 	 * @param password	Password of WebUser.
 	 */
 	public void makeWebUser(String password) {
-		if (webUser != null) webUser = new WebUser(email, password);
+		if (webUser == null) webUser = new WebUser(email, password);
+		// else do nothing (preferably throw an exception)
 	}
+
+	/**
+	 * Returns WebUser of this Customer.
+	 */
+	public WebUser getWebUser() { return webUser; }
 
 	/**
 	 * Returns a String listing the contents of Product in the format:
