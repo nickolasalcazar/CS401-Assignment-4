@@ -20,21 +20,7 @@ public class Payment {
 	public Payment(String id, float total) {
 		this.id = id;
 		this.total = total;
-		this.details = "";	// Left empty
-		date = LocalDate.now();
-	}
-
-	/**
-	 * Constructor for payment. Includes parameter details.
-	 * 
-	 * @param id		Id of payment. Not checked for uniqueness.
-	 * @param total		Amount paid.
-	 * @param details 	Details about the payment.
-	 */
-	public Payment(String id, float total, String details) {
-		this.id = id;
-		this.total = total;
-		this.details = details;
+		this.details = "";	// Empty by default
 		date = LocalDate.now();
 	}
 
