@@ -10,7 +10,7 @@ public class Order {
 	private float total; // equal to the sum of the price of all LineItems
 
 	private float ammount_paid;
-	private boolean paid;
+	private boolean payment_complete; // When ammount_paid == total
 
 	ArrayList<Payment> payments = new ArrayList<Payment>();
 	ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
@@ -39,10 +39,33 @@ public class Order {
 	public void setStatus(OrderStatus newStatus) { status = newStatus; }
 
 	/**
-	 * @return String containing id, order, shipped, ship_to, status, total
-	 * and list of Payments made to Order. String contains items line-by-line.
+	 * Make a Payment to an Order.
+	 * 
+	 * @exception
+	 */
+	//public void makePayment() { TODO }
+
+	/**
+	 * @return String listing properties of Order, as well as the list of
+	 * Payments made to Order.
 	 */
 	public String toString() {
-		return "TODO";
+		String s = "";
+
+		s+="                id: " + id;
+		s+="\n         ordered: " + ordered;
+		s+="\n         shipped: " + shipped;
+		s+="\n         ship_to: " + ship_to;
+		s+="\n          status: " + status;
+		s+="\n           total: " + total;
+		s+="\n     amount_paid: " + ammount_paid;
+		s+="\npayment_complete: " + payment_complete;
+		s+="\nPayments:\n";
+
+		for (int i=0; i<payments.size(); i++) {
+
+		}
+
+		return s;
 	}
 }
