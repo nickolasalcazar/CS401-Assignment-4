@@ -8,14 +8,14 @@ import java.time.LocalDate;
  * an associated WebUser account.
  */
 public class Account {
-	String id;
-	String billing_address;
-	boolean is_closed = false;
-	LocalDate open;
-	LocalDate closed; // Assigned when Account is closed
+	private String id;
+	private String billing_address;
+	private boolean is_closed = false;
+	private LocalDate open;
+	private LocalDate closed; // Assigned when Account is closed
 
-	ShoppingCart shoppingCart; // 1-to-1
-	ArrayList<Order> orders = new ArrayList<Order>(); // 1-to-*
+	private ShoppingCart shoppingCart; // 1-to-1
+	private ArrayList<Order> orders = new ArrayList<Order>(); // 1-to-*
 
 	/**
 	 * Constructor for Account objects. Creates an associated ShoppingCart
