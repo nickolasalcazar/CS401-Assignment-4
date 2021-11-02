@@ -31,7 +31,7 @@ public class ShoppingCart {
 	 */
 	public ArrayList<LineItem> deepCopyLineItems() {
 		ArrayList<LineItem> deepCopy = new ArrayList<LineItem>();
-		for(int i=0; i<lineItems.size(); i++) {
+		for (int i=0; i<lineItems.size(); i++) {
 			Product product = lineItems.get(i).getProduct();
 			float price = lineItems.get(i).getPrice();
 			int qty = lineItems.get(i).getQty();
