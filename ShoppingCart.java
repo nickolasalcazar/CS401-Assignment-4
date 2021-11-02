@@ -18,10 +18,27 @@ public class ShoppingCart {
 	LocalDate getDateCreated() { return created; }
 
 	/**
-	 * Returns lineItems, an ArrayList containing the LineItems of
+	 * @return lineItems, an ArrayList containing the LineItems of
 	 * ShoppingCart.
 	 */
 	public ArrayList<LineItem> getLineItems() { return lineItems; }
+
+	/**
+	 * Returns a deep copy the contents of this ShoppingCart as a new
+	 * ShoppingCart.
+	 * 
+	 * @return Deep copy of the contents of lineItems.
+	 */
+	public ArrayList<LineItem> deepCopyLineItems() {
+		ArrayList<LineItem> deepCopy = new ArrayList<LineItem>();
+		for(int i=0; i<lineItems.size(); i++) {
+			Product product = lineItems.get(i).getProduct();
+			float price = lineItems.get(i).getPrice();
+			int qty = lineItems.get(i).getQty();
+			deepCopy.add(new LineItem(product, price, qty));
+		}
+		return deepCopy;
+	}
 
 	/**
 	 * Empties ShoppingCart of its LineItems.
