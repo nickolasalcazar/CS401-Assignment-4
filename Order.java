@@ -29,6 +29,7 @@ public class Order {
 		ordered = LocalDate.now();
 		ship_to = address;
 		total = calculateTotal();
+		this.lineItems = lineItems;
 		updateAmountPaid();
 	}
 
