@@ -26,6 +26,7 @@ public class Order {
 	 */
 	public Order(String id, String address, ArrayList<LineItem> lineItems) {
 		this.id = id;
+		ordered = LocalDate.now();
 		ship_to = address;
 		total = calculateTotal();
 		updateAmountPaid();
@@ -61,12 +62,12 @@ public class Order {
 	}
 
 	/**
-	 * @return String listing properties of Order, as well as the list of
-	 * Payments made to Order.
+	 * @return String listing properties, Payments, and LineItems associated
+	 * with this Order.
 	 */
 	public String toString() {
 		String s = "";
-		s+="                id: " + id;
+		s+="              id: " + id;
 		s+="\n         ordered: " + ordered;
 		s+="\n         shipped: " + shipped;
 		s+="\n         ship_to: " + ship_to;
@@ -78,8 +79,16 @@ public class Order {
 		if (payments.isEmpty()) {
 			s+="No Payments\n";
 		} else {
-			for (int i=0; i<payments.size(); i++) 
-				{ s+=payments.get(i).toString(); }
+			for (int i=0; i<payments.size(); i++) {
+				s+=payments.get(i).toString();
+			}
+		}
+		if (lineItems.isEmpty()) {
+			s+="No Line Items";
+		} else {
+			for (int i=0; i<lineItems.size(); i++) {
+				s+=lineItems.get(i).getProduct().getName();
+			}
 		}
 		return s;
 	}
