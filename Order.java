@@ -56,7 +56,6 @@ public class Order {
 	 */
 	public String toString() {
 		String s = "";
-
 		s+="                id: " + id;
 		s+="\n         ordered: " + ordered;
 		s+="\n         shipped: " + shipped;
@@ -66,11 +65,8 @@ public class Order {
 		s+="\n     amount_paid: " + amount_paid;
 		s+="\npayment_complete: " + payment_complete;
 		s+="\nPayments:\n";
-
-		for (int i=0; i<payments.size(); i++) {
-
-		}
-
+		for (int i=0; i<payments.size(); i++)
+			{ s+=payments.get(i).toString(); }
 		return s;
 	}
 
