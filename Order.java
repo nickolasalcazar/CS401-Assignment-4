@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-enum OrderStatus { NEW, HOLD, SHIPPED, DELIVERED, CLOSED }
-
 public class Order {
 	private String id;
 	private LocalDate ordered;

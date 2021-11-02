@@ -1,5 +1,3 @@
-enum UserState { NEW, ACTIVE, BLOCKED, BANNED }
-
 /**
  * WebUser represents the online web account of a Customer. A Customer may or
  * may not be assoicated with a WebUser. WebUser is created created and managed
