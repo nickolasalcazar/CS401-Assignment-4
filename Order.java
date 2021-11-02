@@ -37,4 +37,12 @@ public class Order {
 	public ArrayList<LineItem> getLineItems() { return lineItems; }
 
 	public void setStatus(OrderStatus newStatus) { status = newStatus; }
+
+	/**
+	 * @return String containing id, order, shipped, ship_to, status, total
+	 * and list of Payments made to Order. String contains items line-by-line.
+	 */
+	public String toString() {
+		return "TODO";
+	}
 }
