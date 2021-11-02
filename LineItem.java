@@ -22,4 +22,8 @@ public class LineItem {
 	public void setQty(int qty) { this.qty = qty; }
 
 	public Product getProduct() { return product; }
+
+	public String toString() {
+		return product.getName() + " x " + qty + " at $" + price;
+	}
 }
