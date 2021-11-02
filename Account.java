@@ -53,12 +53,13 @@ public class Account {
 	 * Order using LineItems from ShoppingCart. After the Order has been
 	 * from ShoppingCart, ShoppingCart is emptied.
 	 * 
-	 * @param id		ID of the Order to be created.
+	 * @param 	id		ID of the Order to be created.
+	 * @throws	DuplicateIdException
 	 */
 	public void makeOrder(String orderId) throws DuplicateIdException {
 		// Check if orderId already exists
 		for (int i=0; i<orders.size(); i++) {
-			if (orderId == orders.get(i).getId())
+			if (orderId.equals(orders.get(i).getId()))
 				throw new DuplicateIdException("Order ID already assigned.");
 		}
 		Order order = new Order(orderId, billing_address,
