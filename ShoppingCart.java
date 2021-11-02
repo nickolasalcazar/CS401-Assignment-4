@@ -56,7 +56,6 @@ public class ShoppingCart {
 		String s = "";
 		for (int i=0; i<lineItems.size(); i++) {
 			s+=lineItems.get(i).getProduct().getName();
-			if (i != lineItems.size() - 1) s+="\n";
 		}
 		return s;
 	}
