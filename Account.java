@@ -37,6 +37,13 @@ public class Account {
 	public ShoppingCart getShoppingCart() { return shoppingCart; }
 
 	/**
+	 * Returns Order object associated with unique id.
+	 * 
+	 * @return Order object.
+	 */
+	//public Order getOrder(String id) { return ; }
+
+	/**
 	 * Makes a new Order and stores it in the ArrayList orders. Creates the
 	 * Order using LineItems from ShoppingCart. After the Order has been
 	 * from ShoppingCart, ShoppingCart is emptied.
