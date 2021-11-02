@@ -47,4 +47,8 @@ public class Payment {
 	public String getDetails() { return details; } 
 
 	public void setDetails(String details) { this.details = details; }
+
+	public String toString() {
+		return id + " " + date + " " + total + " " + details + "\n";
+	}
 }
