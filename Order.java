@@ -105,8 +105,6 @@ public class Order {
 		for (int i=0; i<lineItems.size(); i++) {
 			t+=lineItems.get(i).getPrice() * lineItems.get(i).getQty();
 		}
-		System.out.println("lineItems = " + lineItems.toString()); // TESTING
-		System.out.println("calculateTotal() = " + t);	// TESTING
 		return t;
 	}
 
