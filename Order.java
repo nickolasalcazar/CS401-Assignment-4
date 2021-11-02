@@ -42,12 +42,22 @@ public class Order {
 	public void setStatus(OrderStatus newStatus) { status = newStatus; }
 
 	/**
-	 * Make a Payment to an Order.
+	 * Make a Payment to an Order. Creates a new Payment and stores it in the
+	 * ArrayList payments. Updates amount_paid. If amount is totally paid,
+	 * payment_complete is updated to true.
 	 * 
-	 * @exception
+	 * @param 	id			Id of payment. Not checked for uniqueness.
+	 * @param 	amount		Amount paid to total.
+	 * @param 	details		Details about the payment.
+	 * @throws	OverpaidException
 	 */
-	public void makePayment() {
-		// TODO
+	public void makePayment(String id, float amount, String details)
+	throws OverpaidException {
+		if ((amount + calculateAmountPaid()) > total)
+			throw new OverpaidException("Overpaid total amount.");
+		payments.add(new Payment(id, amount, details));
+		updateAmountPaid();
+		if (amount_paid == total) payment_complete = true;
 	}
 
 	/**
@@ -82,7 +92,7 @@ public class Order {
 	}
 
 	/**
-	 * Udpates current amount paid from all payments. Updates amount_paid.
+	 * Updates current amount paid from all payments. Updates amount_paid.
 	 */
 	private void updateAmountPaid() { amount_paid = calculateAmountPaid(); }
 
