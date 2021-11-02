@@ -63,7 +63,7 @@ public class Account {
 				throw new DuplicateIdException("Order ID already assigned.");
 		}
 		Order order = new Order(orderId, billing_address,
-			shoppingCart.getLineItems());
+			shoppingCart.deepCopyLineItems());
 		orders.add(order);
 		shoppingCart.clearLineItems();
 	}
