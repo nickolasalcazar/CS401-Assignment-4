@@ -12,7 +12,6 @@ public class ShoppingCart {
 	 */
 	public ShoppingCart() {
 		created = LocalDate.now();
-
 		lineItems = new ArrayList<LineItem>();
 	}
 
@@ -49,4 +48,16 @@ public class ShoppingCart {
 	}
 
 	// public void removeProduct(Product product, int qty) { }
+
+	/**
+	 * @return String listing all LineItems line-by-line.
+	 */
+	public String toString() {
+		String s = "";
+		for (int i=0; i<lineItems.size(); i++) {
+			s+=lineItems.get(i).getProduct().getName();
+			if (i != lineItems.size() - 1) s+="\n";
+		}
+		return s;
+	}
 }
