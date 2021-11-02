@@ -41,7 +41,12 @@ public class Account {
 	 * 
 	 * @return Order object.
 	 */
-	//public Order getOrder(String id) { return ; }
+	public Order getOrder(String id) {
+		for (int i=0; i<orders.size(); i++) {
+			if (orders.get(i).getId() == id) return orders.get(i);
+		}
+		return null;
+	}
 
 	/**
 	 * Makes a new Order and stores it in the ArrayList orders. Creates the
@@ -50,8 +55,14 @@ public class Account {
 	 * 
 	 * @param id		ID of the Order to be created.
 	 */
-	public void makeOrder(String orderId) {
-		Order order = new Order(orderId, billing_address, shoppingCart.getLineItems());
+	public void makeOrder(String orderId) throws DuplicateIdException {
+		// Check if orderId already exists
+		for (int i=0; i<orders.size(); i++) {
+			if (orderId == orders.get(i).getId())
+				throw new DuplicateIdException("Order ID already assigned.");
+		}
+		Order order = new Order(orderId, billing_address,
+			shoppingCart.getLineItems());
 		orders.add(order);
 		shoppingCart.clearLineItems();
 	}
