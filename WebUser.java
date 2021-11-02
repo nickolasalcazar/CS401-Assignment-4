@@ -7,13 +7,15 @@ public class WebUser {
 	private String login_id; // email
 	private String password;
 	private UserState userState = UserState.NEW;
+	private ShoppingCart shoppingCart;
 
 	/**
 	 * Class constructor for WebUser. UserState is set to NEW by default.
 	 */
-	public WebUser(String login_id, String password) {
+	public WebUser(String login_id, String password, ShoppingCart shoppingCart) {
 		this.login_id = login_id;
 		this.password = password;
+		this.shoppingCart = shoppingCart;
 	}
 
 	public String getLoginId() { return login_id; }
@@ -23,7 +25,13 @@ public class WebUser {
 	public void setUserState(UserState userState) { this.userState = userState; }
 
 	/**
-	 * Returns a String listing the contents of WebUser in the format:
+	 * @return ShoppingCart associated with WebUser. A ShoppingCart is
+	 * automatically assigned to WebUser upon creation of WebUser.
+	 */
+	public ShoppingCart getShoppingCart() { return shoppingCart; }
+
+	/**
+	 * @return String listing the contents of WebUser in the format:
 	 * "login_id, password, userState".
 	 */
 	public String toString() {

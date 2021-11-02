@@ -26,23 +26,25 @@ public class Customer {
 	public Account getAccount() { return account; }
 
 	/**
-	 * Creates a WebUser if one has not already been created and assigns it to
-	 * this Customer.
+	 * Creates a WebUser if one has not already been created, and assigns the
+	 * new WebUser to this Customer. Does not throw an exception if user is
+	 * already a WebUser; does nothing.
 	 * 
 	 * @param password	Password of WebUser.
 	 */
 	public void makeWebUser(String password) {
-		if (webUser == null) webUser = new WebUser(email, password);
-		// else do nothing (preferably throw an exception)
+		if (webUser == null) webUser = new WebUser(email, password, 
+										getAccount().getShoppingCart());
+		// else do nothing (TODO: preferably throw an exception)
 	}
 
 	/**
-	 * Returns WebUser of this Customer.
+	 * @return WebUser of this Customer.
 	 */
 	public WebUser getWebUser() { return webUser; }
 
 	/**
-	 * Returns a String listing the contents of Product in the format:
+	 * @return String listing the contents of Product in the format:
 	 * "id, address, phone, email".
 	 */
 	public String toString() {

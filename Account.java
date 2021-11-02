@@ -31,6 +31,11 @@ public class Account {
 		shoppingCart = new ShoppingCart(); // 1 per Account
 	}
 
+	/** 
+	 * @return Reference to ShoppingCart.
+	 */
+	public ShoppingCart getShoppingCart() { return shoppingCart; }
+
 	/**
 	 * Makes a new Order and stores it in the ArrayList orders. Creates the
 	 * Order using LineItems from ShoppingCart. After the Order has been
