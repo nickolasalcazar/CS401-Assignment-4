@@ -44,20 +44,17 @@ public class Order {
 	public void setStatus(OrderStatus newStatus) { status = newStatus; }
 
 	/**
-	 * Make a Payment to an Order. Creates a new Payment and stores it in the
-	 * ArrayList payments. Updates amount_paid. If amount is totally paid,
-	 * payment_complete is updated to true.
+	 * Make a Payment to an Order. Creates a new Payment and stores it in
+	 * payments. Payment id is set to the index of the Payment in the payments.
 	 * 
-	 * @param 	id			Id of payment. Not checked for uniqueness.
 	 * @param 	amount		Amount paid to total.
-	 * @param 	details		Details about the payment.
 	 * @throws	OverpaidException
 	 */
-	public void makePayment(String id, float amount, String details)
+	public void makePayment(float amount)
 	throws OverpaidException {
 		if ((amount + calculateAmountPaid()) > total)
 			throw new OverpaidException("Overpaid total amount.");
-		payments.add(new Payment(id, amount, details));
+		payments.add(new Payment(String.valueOf(lineItems.size()), amount));
 		updateAmountPaid();
 		if (amount_paid == total) payment_complete = true;
 	}
