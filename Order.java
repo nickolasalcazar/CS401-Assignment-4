@@ -75,8 +75,12 @@ public class Order {
 		s+="\n     amount_paid: " + amount_paid;
 		s+="\npayment_complete: " + payment_complete;
 		s+="\nPayments:\n";
-		for (int i=0; i<payments.size(); i++)
-			{ s+=payments.get(i).toString(); }
+		if (payments.isEmpty()) {
+			s+="No Payments\n";
+		} else {
+			for (int i=0; i<payments.size(); i++) 
+				{ s+=payments.get(i).toString(); }
+		}
 		return s;
 	}
 
