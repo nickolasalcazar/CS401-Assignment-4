@@ -64,7 +64,20 @@ public class ShoppingCart {
 		lineItems.add(new LineItem(product, price, qty));
 	}
 
-	// public void removeProduct(Product product, int qty) { }
+	/**
+	 * Removes a lineItem from lineItems
+	 * @return True if lineItem is removed, false otherwise.
+	 */
+	public boolean removeLineItem(Product product) {
+		if (lineItems.isEmpty()) return false;
+		for (int i = 0; i < lineItems.size(); i++) {
+			if (lineItems.get(i).getProduct() == product) {
+				lineItems.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**
 	 * @return String listing all LineItems line-by-line.
