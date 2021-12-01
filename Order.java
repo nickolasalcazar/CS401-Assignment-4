@@ -54,7 +54,7 @@ public class Order {
 	throws OverpaidException {
 		if ((amount + calculateAmountPaid()) > total)
 			throw new OverpaidException("Overpaid total amount.");
-		payments.add(new Payment(String.valueOf(lineItems.size()), amount));
+		payments.add(new Payment(String.valueOf(payments.size()), amount));
 		updateAmountPaid();
 		if (amount_paid == total) payment_complete = true;
 	}
